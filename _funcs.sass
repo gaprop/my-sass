@@ -1,0 +1,15 @@
+@function perfColor($color)
+  @if (lightness($color) < 30%)
+    @return $white
+  @else
+    @return black
+
+=fixUnderline($color)
+  &.underline > *
+    color: perfColor($color)
+    &:hover
+      color: perfColor($color)
+      &:before
+        background-color: perfColor($color)
+    &:before
+      background-color: perfColor($color)

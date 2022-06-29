@@ -1,0 +1,9 @@
+// Grid stuff...
+@for $columns from 2 through 6
+  .grid-#{$columns}x
+    display: grid
+    // grid-gap: 20px
+    grid-template-columns: repeat($columns, 1fr)
+    // margin: 20px 0
+    li
+      list-style: none

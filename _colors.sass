@@ -1,0 +1,70 @@
+@import '_funcs'
+
+@each $name, $color in $colors
+  .#{$name}
+    color: perfColor($color)
+    &.block
+      background: $color
+      color: perfColor($color)
+    &.underline > *
+      color: perfColor($bg-color)
+      &:hover
+        color: perfColor($bg-color)
+        &:before
+          background-color: $color
+      &:before
+        background-color: $color
+    &.txt-input
+      label
+        color: perfColor($bg-color)
+      input[type=text]
+        border-bottom: solid 1px $color
+        caret-color: $color
+      button
+        background-color: $color
+        +fixUnderline($color)
+    &.btn
+      background-color: $color
+      color: perfColor($color)
+      +fixUnderline($color)
+    &.select-wrapper
+      select
+        color: $color
+      &:after
+        color: $color
+
+
+
+// Dumb backup
+//
+// @import '_funcs'
+//
+// @each $name, $color in $colors
+//   .#{$name}
+//     color: perfColor($color)
+//     &.block
+//       background: $color
+//       color: perfColor($color)
+//     &.underline > *
+//       color: perfColor($color)
+//       &:hover
+//         color: perfColor($color)
+//         &:before
+//           background-color: perfColor($color)
+//       &:before
+//         background-color: perfColor($color)
+//     &.txt-input
+//       label
+//         color: perfColor($bg-color)
+//       input[type=text]
+//         border-bottom: solid 1px $color
+//         caret-color: $color
+//       button
+//         background-color: $color
+//     &.btn
+//       background-color: $color
+//     &.select-wrapper
+//       select
+//         color: $color
+//       &:after
+//         color: $color
